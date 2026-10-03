@@ -9,17 +9,18 @@ var
 begin
    clrscr;
    s:= false;
+   k:= 0;
    repeat
    write('Masukkan password: ');
    readln(pc);
    if pc=p then
    begin
-        s:= ture;
+        s:= true;
         break;
     end
     else
     begin
-        k:= i + 1;
+        k:= k + 1;
     end;
     until (s) or (k = 3);
     clrscr;
@@ -27,5 +28,4 @@ begin
     writeln('Login Berhasil! Selamat Datang')
     else
     writeln('Akses Ditolak! Akun Terkunci.');
-    end;
 end.
