@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Future Hobbies</title>
+    <link rel="icon" href="camera.jpg" type="image/x-icon">
+    <style>
+        :root {
+            --bg-1: #030b17;
+            --bg-2: #0d1d2e;
+            --panel: rgba(15, 26, 42, 0.72);
+            --panel-strong: rgba(19, 34, 52, 0.9);
+            --line: rgba(117, 214, 255, 0.35);
+            --text: #eaf8ff;
+            --muted: #aed7ee;
+            --cyan: #6ee7ff;
+            --blue: #67a8ff;
+            --purple: #8b7dff;
+            --pink: #ff7ae6;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, rgba(103, 168, 255, 0.28), transparent 30%),
+                radial-gradient(circle at bottom right, rgba(139, 125, 255, 0.28), transparent 25%),
+                linear-gradient(135deg, var(--bg-1), var(--bg-2));
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 32px 32px;
+            pointer-events: none;
+        }
+
+        .container {
+            position: relative;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px 60px;
+        }
+
+        .hero {
+            background: rgba(10, 18, 30, 0.6);
+            border: 1px solid var(--line);
+            border-radius: 24px;
+            box-shadow: 0 0 30px rgba(110, 231, 255, 0.15);
+            padding: 30px 24px 18px;
+            text-align: center;
+            backdrop-filter: blur(8px);
+        }
+
+        .badge {
+            display: inline-block;
+            margin-bottom: 12px;
+            border: 1px solid rgba(110, 231, 255, 0.5);
+            border-radius: 999px;
+            padding: 8px 16px;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--cyan);
+            background: rgba(110, 231, 255, 0.08);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(2.3rem, 6vw, 4.5rem);
+            letter-spacing: 1px;
+            background: linear-gradient(90deg, var(--cyan), var(--purple), var(--pink));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .intro {
+            margin-top: 28px;
+            padding: 22px 20px;
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            background: var(--panel);
+            line-height: 1.8;
+            font-size: 1.05rem;
+            color: var(--muted);
+        }
+
+        .favorite-list {
+            margin: 26px 0 0;
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 14px;
+        }
+
+        .favorite-list li {
+            padding: 16px 18px;
+            border-radius: 14px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(110, 231, 255, 0.09), rgba(139, 125, 255, 0.12));
+            border: 1px solid rgba(110, 231, 255, 0.25);
+            color: var(--text);
+            font-weight: 600;
+            box-shadow: inset 0 0 16px rgba(110, 231, 255, 0.08);
+        }
+
+        .hobby-card {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 22px;
+            align-items: center;
+            margin-top: 26px;
+            padding: 22px;
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            background: var(--panel);
+            box-shadow: 0 0 20px rgba(103, 168, 255, 0.1);
+        }
+
+        .hobby-card:nth-child(even) {
+            grid-template-columns: 0.9fr 1.1fr;
+        }
+
+        .hobby-card:nth-child(even) .info {
+            order: 2;
+        }
+
+        .hobby-card:nth-child(even) .image-wrap {
+            order: 1;
+        }
+
+        .info h2 {
+            margin: 0 0 12px;
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            color: var(--cyan);
+        }
+
+        .info p {
+            margin: 0;
+            line-height: 1.9;
+            color: var(--muted);
+            font-size: 1rem;
+        }
+
+        .image-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hobby-card img {
+            width: 100%;
+            max-width: 480px;
+            border-radius: 18px;
+            border: 1px solid rgba(110, 231, 255, 0.22);
+            box-shadow: 0 18px 40px rgba(3, 11, 23, 0.7);
+            object-fit: cover;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hobby-card img:hover {
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: 0 22px 42px rgba(110, 231, 255, 0.18);
+        }
+
+        .final-note {
+            margin-top: 30px;
+            padding: 20px 24px;
+            border: 1px dashed rgba(110, 231, 255, 0.45);
+            border-radius: 16px;
+            background: rgba(110, 231, 255, 0.04);
+            color: var(--text);
+            line-height: 1.8;
+            text-align: center;
+            font-size: 1.04rem;
+        }
+
+        @media (max-width: 760px) {
+            .hobby-card,
+            .hobby-card:nth-child(even) {
+                grid-template-columns: 1fr;
+            }
+
+            .hobby-card:nth-child(even) .info,
+            .hobby-card:nth-child(even) .image-wrap {
+                order: initial;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="hero">
+            <div class="badge">Future Lifestyle</div>
+            <h1>Hobbies</h1>
+        </header>
+
+        <section class="intro">
+            <p>
+                Hobbies are activities that we can enjoy in our free time. I have tried many hobbies before,
+                and some of them have become my favorite ones.
+            </p>
+            <p>
+                Here are my most favorite hobbies:
+            </p>
+            <ul class="favorite-list">
+                <li>Playing Football</li>
+                <li>Playing Video Games</li>
+                <li>Jogging</li>
+                <li>Editing Videos</li>
+            </ul>
+        </section>
+
+        <section class="hobby-card">
+            <div class="info">
+                <h2>Playing Football</h2>
+                <p>
+                    Football is one of the most popular sports in the world. I really enjoy playing football,
+                    and this sport is my favorite. I usually play with other people, and my idol in football is
+                    Cristiano Ronaldo.
+                </p>
+            </div>
+            <div class="image-wrap">
+                <img src="football.jpg" alt="Football">
+            </div>
+        </section>
+
+        <section class="hobby-card">
+            <div class="info">
+                <h2>Playing Video Games</h2>
+                <p>
+                    This is one of my second favorite hobbies. I love playing video games, especially online mobile games.
+                    I usually play with my friends, and it helps me reduce stress while having fun.
+                </p>
+            </div>
+            <div class="image-wrap">
+                <img src="playing video games.jpg" alt="Video Games">
+            </div>
+        </section>
+
+        <section class="hobby-card">
+            <div class="info">
+                <h2>Jogging</h2>
+                <p>
+                    Jogging is one of my favorite hobbies. I do it about four times a week, usually in the morning.
+                    It is very good for my health and helps keep my body fit and stronger.
+                </p>
+            </div>
+            <div class="image-wrap">
+                <img src="jogging.jpg" alt="Jogging">
+            </div>
+        </section>
+
+        <section class="hobby-card">
+            <div class="info">
+                <h2>Editing Videos</h2>
+                <p>
+                    Editing videos is another favorite hobby of mine. I do it whenever I have free time, often using CapCut.
+                    I enjoy it because I can express my creativity and make my own videos.
+                </p>
+            </div>
+            <div class="image-wrap">
+                <img src="editing videos.jpg" alt="Editing Videos">
+            </div>
+        </section>
+
+        <div class="final-note">
+            Those are my most favorite hobbies. I really enjoy doing them because they help me reduce stress,
+            improve my creativity, and make life more exciting.
+        </div>
+    </div>
+</body>
+</html>
