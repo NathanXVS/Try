@@ -26,7 +26,6 @@ begin
         writeln('----------------------------------');
     end;
     until (s) or (k = 3);
-    clrscr;
     if s then
     writeln('Login Berhasil! Selamat Datang')
     else
