@@ -9,6 +9,7 @@ begin
     clrscr;
     write('Pilihlah salah satu operasi perhitungan (1-5): ');
     readln(n);
+    writeln('*********************************************************');
     case n of
         1:
         begin

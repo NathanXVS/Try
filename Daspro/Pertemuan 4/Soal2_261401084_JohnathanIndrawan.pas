@@ -1,7 +1,7 @@
 program soal2;
 uses crt;
 const
-    p= 'N_XVS22';
+    p= 'H_2026';
 var
     i, k: integer;
     s: boolean;
@@ -13,7 +13,7 @@ begin
    repeat
    write('Masukkan password: ');
    readln(pc);
-   if pc=p then
+   if (pc = p) then
    begin
         s:= true;
         break;
@@ -21,6 +21,9 @@ begin
     else
     begin
         k:= k + 1;
+        writeln('----------------------------------');
+        writeln('Sisa kesempatan: ', 3-k);
+        writeln('----------------------------------');
     end;
     until (s) or (k = 3);
     clrscr;

@@ -17,7 +17,9 @@ begin
             h:= ja + ((j - 1) * 3000);
             if j > 10 then
             h:= 30000;
+            writeln('--------------------------------');
             writeln('Biaya parkir: Rp. ', h);
+            writeln('--------------------------------');
         end;
     'K', 'k':
         begin
@@ -27,7 +29,9 @@ begin
             h:= ja + ((j - 1) * 1000);
             if j > 10 then
             h:= 10000;
+            writeln('--------------------------------');
             writeln('Biaya parkir: Rp. ', h);
+            writeln('--------------------------------');
         end;
     'B', 'b':
         begin
@@ -37,7 +41,9 @@ begin
             h:= ja + ((j - 1) * 5000);
             if j > 10 then
             h:= 50000;
+            writeln('--------------------------------');
             writeln('Biaya parkir: Rp. ', h);
+            writeln('--------------------------------');
         end;
     end;
 end.

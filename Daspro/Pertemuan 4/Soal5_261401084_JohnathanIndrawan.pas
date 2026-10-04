@@ -25,7 +25,9 @@ begin
         r:= tl/n;
         writeln('Rata-rata nilai mahasiswa ke-', i, ' adalah: ', r:0:2);
         writeln('----------------------------------------');
-        if r >= 65 then
+        if r > 100 then
+        writeln('Nilai macam apa ini???')
+        else if r >= 65 then
         begin
             writeln('LULUS');
             l:= l + 1;

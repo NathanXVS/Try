@@ -8,6 +8,7 @@ begin
     clrscr;
     write('Maukkan golongan karyawan (A/B/C): ');
     readln(g);
+    writeln('-------------------------------------');
     case g of
     'A', 'a':
         begin
@@ -21,7 +22,18 @@ begin
             b:= 0;
             t:= gp + gl + b;
             writeln('Gaji pokok: Rp. ', gp);
-            writeln('Lembur: Rp. ', l);
+            writeln('Lembur: Rp. ', gl);
+            writeln('Bonus: Rp. ', b);
+            writeln('Total gaji: Rp. ', t);
+        end
+        else
+        begin
+            l:= 0;
+            gl:= 0;
+            b:= 0;
+            t:=gp;
+            writeln('Gaji pokok: Rp. ', gp);
+            writeln('Lembur: Rp. ', gl);
             writeln('Bonus: Rp. ', b);
             writeln('Total gaji: Rp. ', t);
         end;
@@ -38,7 +50,18 @@ begin
             b:= 0;
             t:= gp + gl + b;
             writeln('Gaji pokok: Rp. ', gp);
-            writeln('Lembur: Rp. ', l);
+            writeln('Lembur: Rp. ', gl);
+            writeln('Bonus: Rp. ', b);
+            writeln('Total gaji: Rp. ', t);
+        end
+        else
+        begin
+            l:= 0;
+            gl:= 0;
+            b:= 0;
+            t:=gp;
+            writeln('Gaji pokok: Rp. ', gp);
+            writeln('Lembur: Rp. ', gl);
             writeln('Bonus: Rp. ', b);
             writeln('Total gaji: Rp. ', t);
         end;
@@ -57,9 +80,21 @@ begin
         b:= 100000;
         t:= gp + gl + b;
         writeln('Gaji pokok: Rp. ', gp);
-        writeln('Lembur: Rp. ', l);
+        writeln('Lembur: Rp. ', gl);
         writeln('Bonus: Rp. ', b);
         writeln('Total gaji: Rp. ', t);
+        end
+        else
+        begin
+            l:= 0;
+            gl:= 0;
+            b:= 0;
+            t:=gp;
+            writeln('Gaji pokok: Rp. ', gp);
+            writeln('Lembur: Rp. ', gl);
+            writeln('Bonus: Rp. ', b);
+            writeln('Total gaji: Rp. ', t);
         end;
     end;
+    writeln('-------------------------------------');
 end. 
