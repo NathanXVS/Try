@@ -2,7 +2,7 @@ program login;
 uses crt;
 const
     ub = 'John';
-    pb = 'N_XandraVSaber22';
+    pb = '123456';
 var
     u, p: string;
     c: integer;
