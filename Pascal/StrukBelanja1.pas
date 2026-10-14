@@ -32,10 +32,24 @@ begin
       begin
           write('Nama barang: ');
           readln(b[i]);
-          write('Harga barang: Rp.');
-          readln(h[i]);
-          write('Quantity: ');
-          readln(q[i]);
+          while (true) do 
+          begin
+            write('Harga barang: Rp.');
+            readln(h[i]);
+            if (h[i] > 0) then
+            begin
+              break;
+            end;
+          end;
+          while (true) do
+          begin
+            write('Quantity: ');
+            readln(q[i]);
+            if (q[i] > 0) then
+            begin
+              break;
+            end;
+          end;
           t[i]:=h[i]*q[i];
           writeln('========================');
           writeln('Subtotal: Rp.', t[i]);
