@@ -15,6 +15,7 @@ begin
     c:= true;
     if q = 1 then
     begin
+    clrscr;
     writeln('Semua manusia itu abadi?');
     writeln('A. Salah');
     writeln('B. Itu kata dewa');
@@ -24,6 +25,7 @@ begin
     readln(a[1]);
     if (a[1] = 'A') or (a[1] = 'a') then
     s:=s + 1;
+    clrscr;
     writeln('Apa yang paling penting bagi mahasiswa?');
     writeln('A. Koneksi');
     writeln('B. Ilmu');
@@ -33,6 +35,7 @@ begin
     readln(a[3]);
     if (a[3] = 'D') or (a[3] = 'd') then
     s:=s + 1;
+    clrscr;
     writeln('Siapa presiden pertama di Indonesia?');
     writeln('A. Wowo');
     writeln('B. SBY');
@@ -42,6 +45,7 @@ begin
     readln(a[5]);
     if (a[5] = 'D') or (a[5] = 'd') then
     s:=s + 1;
+    clrscr;
     writeln('Write dalam pascal digunakan untuk apa?');
     writeln('A. Menginput variabel');
     writeln('B. Menampilkan variabel');
@@ -51,6 +55,7 @@ begin
     readln(a[7]);
     if (a[7] = 'B') or (a[7] = 'b') then
     s:=s + 1;
+    clrscr;
     writeln('Seperti apakah bentuk air itu?');
     writeln('A. Bergelombang');
     writeln('B. Tenang');
@@ -60,6 +65,7 @@ begin
     readln(a[9]);
     if (a[9] = 'D') or (a[9] = 'd') then
     s:=s + 1;
+    clrscr;
     writeln('Ketika ibu panggil, "Nak, datang sini bentar", sebaiknya seperti apa sikap kita?');
     writeln('A. Datang, nuruti, selesai');
     writeln('B. Pura pura tidak dengar');
@@ -69,6 +75,7 @@ begin
     readln(a[11]);
     if (a[11] = 'A') or (a[11] = 'a') then
     s:=s + 1;
+    clrscr;
     writeln('Apa arti pintar itu?');
     writeln('A. Tahu semua');
     writeln('B. Ingat di awal lupa di akhir');
@@ -78,6 +85,7 @@ begin
     readln(a[13]);
     if (a[13] = 'D') or (a[13] = 'd') then
     s:=s + 1;
+    clrscr;
     writeln('Apakah warna dilihat secara langsung tanpa adanya pembiasan cahaya?');
     writeln('A. Mungkin');
     writeln('B. Bisa');
@@ -87,6 +95,7 @@ begin
     readln(a[15]);
     if (a[15] = 'D') or (a[15] = 'd') then
     s:=s + 1;
+    clrscr;
     writeln('Kalau masuk angin minumnya...?');
     writeln('A. Paramex');
     writeln('B. Darah');
@@ -96,6 +105,7 @@ begin
     readln(a[17]);
     if (a[17] = 'C') or (a[17] = 'c') then
     s:=s + 1;
+    clrscr;
     writeln('Proof mana yang paling sulit?');
     writeln('A. Deduction');
     writeln('B. Mathematical Induction');
@@ -105,6 +115,7 @@ begin
     readln(a[19]);
     if (a[19] = 'C') or (a[19] = 'c') then
     s:=s + 1;
+    clrscr;
     writeln('Skor total: ', s, '/10');
     end;
 end.
