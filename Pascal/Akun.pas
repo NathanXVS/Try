@@ -1,43 +1,166 @@
 program login;
 uses crt;
 const
-    ub = 'John';
-    pb = '123456';
+    uc = 'John';
+    pc = '12345678';
+label
+    a, mn, b, pr;
 var
-    u, p: string;
-    c: integer;
     s: boolean;
+    u, p, m, me: string;
+    n: array[1..100] of string;
+    c, i, j, t, ce: integer;
+    co, sc, q: array[1..100] of integer;
+    k: char;
 begin
+    a:
     clrscr;
-        c := 0;
-        s := false;
-    writeln('########################');
-    writeln('======Login System======');
-    writeln('************************');
+    writeln('==================================');
+    writeln('-----------Login System-----------');
+    writeln('==================================');
     writeln;
+    s := false;
+    c := 0;
     repeat
-    write('Username: ');
-    readln(u);
-    write('Password: ');
-    readln(p);
-    writeln;
-    if (u = ub) and (p = pb) then
+        write('Username: '); textcolor(cyan);
+        readln(u); textcolor(white);
+        write('Password: '); textcolor(cyan);
+        readln(p); textcolor(white);
+        if (u = uc) and (p = pc) then
+        s := true
+        else
+        begin
+            c := c + 1;
+            writeln;
+            writeln('------------------------');
+            write('Login fail, remaining: '); textcolor(green); writeln(3 - c); textcolor(white);
+            writeln('------------------------');
+            writeln;
+        end;
+    until (s) or (c = 3);
+    if s then
     begin
-        s := true;
+        clrscr;
+        writeln('Login success!');
+        delay(1000);
+        write('Welcome '); textcolor(cyan); writeln('N_XVS'); textcolor(white);
+        delay(2000);
+        mn:
+        clrscr;
+        writeln('========================================');
+        writeln('------------------Menu------------------');
+        writeln('========================================');
+        writeln;
+        writeln('[1] About this program');
+        writeln('[2] Redo the login');
+        writeln('[3] Shop online');
+        writeln('[4] Exit');
+        writeln('----------------------------------------');
+        write('Insert menu: '); textcolor(cyan);
+        readln(m); textcolor(white);
+        case m of
+        '1':
+        begin
+            clrscr;
+            writeln('===================================================================================================================');
+            writeln('-----------------This program is just for improve my pascal skill and I redo the program from zero-----------------');
+            writeln('===================================================================================================================');
+            delay(5000);
+            goto mn;
+        end;
+        '2':
+            goto a;
+        '3':
+        begin
+            b:
+            clrscr;
+            writeln('========================================================');
+            writeln('----------------------Shop Program----------------------');
+            writeln('========================================================');
+            writeln;
+            writeln('[1] Continue to program');
+            writeln('[2] Exit');
+            writeln('--------------------------------------------------------');
+            write('Insert menu: '); textcolor(cyan);
+            readln(me); textcolor(white);
+            case me of
+            '1':
+            begin
+                pr:
+                clrscr;
+                writeln('========================================================');
+                writeln('----------------------Shop Program----------------------');
+                writeln('========================================================');
+                writeln;
+                write('How many things you want to buy? ');
+                readln(t);
+                writeln;
+                for j := 1 to t do
+                begin
+                    writeln('Item ', j);
+                    write('Item name: ');
+                    readln(n[j]);
+                    write('Cost: $'); textcolor(lightgreen);
+                    readln(co[j]); textcolor(white);
+                    write('Quantity: ');
+                    readln(q[j]);
+                    sc[j] := co[j] * q[j];
+                    write('Sub-total: $'); textcolor(lightgreen); writeln(sc[j]); textcolor(white);
+                    writeln('---------------------------');
+                end;
+                ce := 0;
+                for j := 1 to t do
+                ce := ce + sc[j];
+                writeln;
+                write('Total cost: $'); textcolor(lightgreen); writeln(ce); textcolor(white);
+                writeln('---------------------------');
+                write('Wanna do the shop again [Y/N]? ');
+                readln(k);
+                if (k = 'Y') or (k = 'y') then
+                goto pr
+                else
+                goto b;
+            end;
+            '2':
+                goto mn;
+            else
+            begin
+                clrscr;
+                textcolor(red);
+                writeln('There is no other menu...');
+                textcolor(white);
+                delay(3000);
+                goto b;
+            end;
+            end;
+        end;
+        '4':
+        begin
+            clrscr;
+            writeln('========================================================');
+            writeln('-------------Thank you for using my program-------------');
+            writeln('========================================================');
+            delay(3000);
+            clrscr;
+        end;
+        else
+        begin
+            clrscr;
+            textcolor(red);
+            writeln('There is no other menu...');
+            textcolor(white);
+            delay(3000);
+            goto mn;
+        end;
+        end;
     end
     else
     begin
-        c := c + 1;
-        writeln('************************');
-        writeln('Login Fail, remain: ', 3 - c);
-        writeln('************************');
-        writeln;
+        clrscr;
+        for i := 1 to 12000 do
+        begin
+            textcolor(lightred);
+            write('WHO ARE YOU!? ');
+        end;
     end;
-    until (s) or (c = 3);
-    clrscr;
-    if s then
-    writeln('Access Granted')
-    else
-    writeln('Login Failed!');
-    readln;
 end.
