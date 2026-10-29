@@ -17,7 +17,7 @@ begin
     readln(d); textcolor(white);
     write('Masukkan tinggi: '); textcolor(cyan);
     readln(t); textcolor(white);
-    if (d < 1) or (t < 1) then
+    if (d <= 1) or (t <= 1) then
     begin
         clrscr;
         textcolor(lightred);
