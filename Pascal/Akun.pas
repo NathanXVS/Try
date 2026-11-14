@@ -56,7 +56,7 @@ begin
         writeln('[1] About this program');
         writeln('[2] Redo the login');
         writeln('[3] Shop online');
-        writeln('[4] Well-being');
+        writeln('[4] Health');
         writeln('[5] Exit');
         writeln('----------------------------------------');
         write('Insert menu: '); textcolor(cyan);
@@ -141,13 +141,13 @@ begin
         begin
             w:
             clrscr;
-            writeln('==========================================');
-            writeln('----------------Well-being----------------');
-            writeln('==========================================');
+            writeln('======================================');
+            writeln('----------------Health----------------');
+            writeln('======================================');
             writeln;
             writeln('[1] BMI');
             writeln('[2] Exit');
-            writeln('------------------------------------------');
+            writeln('--------------------------------------');
             write('Insert menu: '); textcolor(cyan);
             readln(men); textcolor(white);
             case men of
@@ -159,10 +159,10 @@ begin
                 writeln('-------------BMI-------------');
                 writeln('=============================');
                 writeln;
-                write('Insert your mass: ');
-                readln(ma);
-                write('Insert your height: ');
-                readln(h);
+                write('Insert your mass: '); textcolor(cyan);
+                readln(ma); textcolor(white);
+                write('Insert your height: '); textcolor(cyan);
+                readln(h); textcolor(white);
                 writeln;
                 hm := h / 100;
                 bmi := ma / (hm * hm);
